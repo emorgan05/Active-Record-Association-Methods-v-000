@@ -7,6 +7,7 @@ class Song < ActiveRecord::Base
   end
 
   def drake_made_this
-    self.artist = Artist.where("name = ?", "Drake")[0]
+    drake = Artist.create(name: "Drake")
+    self.artist = drake
   end
 end
